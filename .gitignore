@@ -38,6 +38,8 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 
+Carthage/
+
 *_i.c
 *_p.c
 *_i.h
@@ -196,3 +198,7 @@ FakesAssemblies/
 *.opt
 WebP.Touch/.droidres/.webp.touch.droidres.db
 *.xcuserstate
+
+xcshareddata
+xcuserdata/
+*.xcuserdata/

@@ -36,7 +36,7 @@ namespace Demo
 		{
 			var decoder = new WebP.Touch.WebPCodec();
 			var httpClient = new HttpClient();
-			using (var stream = await httpClient.GetStreamAsync("http://www.gstatic.com/webp/gallery/1.webp").ConfigureAwait(false))
+			using (var stream = await httpClient.GetStreamAsync("https://res.cloudinary.com/demo/image/upload/w_300/sample.webp").ConfigureAwait(false))
 			{
 				var image = decoder.Decode(stream);
 				InvokeOnMainThread(() =>

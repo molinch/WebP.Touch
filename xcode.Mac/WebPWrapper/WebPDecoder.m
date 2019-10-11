@@ -4,7 +4,11 @@
 //
 
 #import "WebPDecoder.h"
-#import <WebP/decode.h>
+
+#import <libwebp/decode.h>
+#import <libwebp/encode.h>
+#import <libwebp/demux.h>
+#import <libwebp/mux.h>
 
 // This gets called when the NSImage gets collected and frees the underlying image.
 static void free_image_data(void *info, const void *data, size_t size)
@@ -17,7 +21,7 @@ static void free_image_data(void *info, const void *data, size_t size)
     free((void *) data);
 }
 
-
+    
 @implementation WebPDecoder
 
 

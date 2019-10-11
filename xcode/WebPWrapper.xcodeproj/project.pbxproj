@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23AE27A8234E355B0006D5F9 /* libwebp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AE27A7234E355B0006D5F9 /* libwebp.framework */; };
 		96CD59CF1ADFB187009FABC4 /* WebPDecoder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96CD59CE1ADFB187009FABC4 /* WebPDecoder.h */; };
 		96CD59D11ADFB187009FABC4 /* WebPDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD59D01ADFB187009FABC4 /* WebPDecoder.m */; };
 		96D366B91B1345D70026FE4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D366B81B1345D70026FE4A /* UIKit.framework */; };
 		96D366BB1B1345E00026FE4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D366BA1B1345E00026FE4A /* CoreGraphics.framework */; };
 		96D366BD1B1345F70026FE4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D366BC1B1345F70026FE4A /* Foundation.framework */; };
-		96D366BF1B13460C0026FE4A /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D366BE1B13460C0026FE4A /* WebP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,13 +29,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		23AE27A7234E355B0006D5F9 /* libwebp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libwebp.framework; path = Carthage/Build/iOS/libwebp.framework; sourceTree = "<group>"; };
 		96CD59CB1ADFB187009FABC4 /* libWebPWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWebPWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CD59CE1ADFB187009FABC4 /* WebPDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPDecoder.h; sourceTree = "<group>"; };
 		96CD59D01ADFB187009FABC4 /* WebPDecoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPDecoder.m; sourceTree = "<group>"; };
 		96D366B81B1345D70026FE4A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		96D366BA1B1345E00026FE4A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		96D366BC1B1345F70026FE4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		96D366BE1B13460C0026FE4A /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = WebPWrapper/WebP.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96D366BF1B13460C0026FE4A /* WebP.framework in Frameworks */,
+				23AE27A8234E355B0006D5F9 /* libwebp.framework in Frameworks */,
 				96D366BD1B1345F70026FE4A /* Foundation.framework in Frameworks */,
 				96D366BB1B1345E00026FE4A /* CoreGraphics.framework in Frameworks */,
 				96D366B91B1345D70026FE4A /* UIKit.framework in Frameworks */,
@@ -82,7 +82,7 @@
 		96CEC9B11B12931A007314E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				96D366BE1B13460C0026FE4A /* WebP.framework */,
+				23AE27A7234E355B0006D5F9 /* libwebp.framework */,
 				96D366BC1B1345F70026FE4A /* Foundation.framework */,
 				96D366BA1B1345E00026FE4A /* CoreGraphics.framework */,
 				96D366B81B1345D70026FE4A /* UIKit.framework */,
@@ -129,6 +129,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 96CD59C21ADFB186009FABC4;
@@ -236,9 +237,11 @@
 		96CD59E01ADFB187009FABC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WebPWrapper",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -249,9 +252,11 @@
 		96CD59E11ADFB187009FABC4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WebPWrapper",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
